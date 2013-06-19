@@ -13,7 +13,8 @@ var content = canvas.getContext("2d");
 // Controls gamestate,
 function Game(){
     this.state = 0;
-    this.score = 0;
+    this.score = 0;;
+    this.sprites = [];
 }
 
 Game.prototype = {
@@ -44,6 +45,9 @@ Game.prototype = {
    }
    start: function() {
       this.firstRun();
+   }
+   initializePlayer: function() {
+       var Player = Object.create(Sprite.Character())
    }
    update: function() {
       //call render of sprites?
