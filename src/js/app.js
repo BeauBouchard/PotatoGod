@@ -9,13 +9,14 @@ var canvas = document.getElementByID("canvas");
 var content = canvas.getContext("2d"); 
 
 // Game Object
+
 // Controls gamestate,
-function game(){
+function Game(){
     this.state = 0;
     this.score = 0;
 }
 
-game.prototype = {
+Game.prototype = {
    getinfo: function() {
       return this.state;
    }
@@ -36,12 +37,33 @@ game.prototype = {
    firstRun: function () {
     //game just started.
     //reset score to 0, just to make sure
-    this.score = 0;
+      this.score = 0;
+      this.state = 0;
+      //reset characters?
+      //
    }
+   start: function() {
+      this.firstRun();
+   }
+   update: function() {
+      //call render of sprites?
+      //
+   }
+   
 }
 
+
+//Creating Game Object
+var game = Object.create(Game.prototype);
+game.start();
+
 //This is the main game loop for running.
+var thentime;
 function main(){
+     var now = Date.now();
+     var delta = (now - thentime) / 1000.0;
+     
+     game.update(delta);
 
 }
  
