@@ -5,8 +5,7 @@
  */
  
  
-var canvas = document.getElementByID("canvas");
-var content = canvas.getContext("2d"); 
+
 
 // Game Object
 
@@ -55,6 +54,13 @@ Game.prototype = {
    }
    
 }
+
+// Start
+var canvas = document.getElementByID("canvas");
+var content = canvas.getContext("2d"); 
+canvas.width = 1024;
+canvas.height = 768;
+document.getElementsById("game").append(canvas);
 
 
 //Creating Game Object
