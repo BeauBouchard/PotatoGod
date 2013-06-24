@@ -12,7 +12,8 @@
 // Controls gamestate,
 function Game(){
     this.state = 0;
-    this.score = 0;;
+    this.score = 0;
+    this.tick = 0;
     this.sprites = [];
 }
 
@@ -46,14 +47,54 @@ Game.prototype = {
       this.firstRun();
    }
    initializePlayer: function() {
-       var Player = Object.create(Sprite.Character())
+       var Player = Object.create(Sprite.Character.prototype("img/player.png",32));
+       Player.initialize(canvas.width / 2,canvas.height / 2);
+       this.sprites["img/player.png"] = Player;
+       
+       
    }
-   update: function() {
+   handleInput: function(inc_mod) {
+    
+        if ((38 in keyStroke )|| (87 in keyStroke)) {// up key stroke or 'w' key stroke
+            //if(cdetect){player.y -= player.speed * inc_mod;}
+       	    //else{player.y += player.speed * inc_mod*4;}
+       	    //tick += inc_mod*5;
+       	}
+       	if ((40 in keyStroke) || (83 in keyStroke)) { // down key stroke or 's' key stroke
+       	   	//if(cdetect){player.y += player.speed * inc_mod;}
+       	   	//else{player.y -= player.speed * inc_mod*4;}
+       		   //tick += inc_mod*5;
+       	}
+       	if ((37 in keyStroke) || (65 in keyStroke)){ // left key stroke or 'a' key stroke
+       	   	//if(cdetect){player.x -= player.speed * inc_mod;}
+       	   	//else{player.x += player.speed * inc_mod*4;}
+       	   	//tick += inc_mod*5;
+       
+       	}
+       	if ((39 in keyStroke) || (68 in keyStroke)) { // right key stroke or 'd' key stroke
+       	   	//if(cdetect){player.x += player.speed * inc_mod;}
+       	   	//else{player.x -= player.speed * inc_mod*4;}
+       	   	//tick += inc_mod*5;
+       	}
+       
+       	//if(tick >1){playerAnimate();tick=0;}
+       
+       	//action, or fire? button 
+       	if ((32 in keyStroke) || (17 in keyStroke)) { // SPACE key stroke or CTRL key stroke
+       		//Fire
+       	}
+   }
+   update: function (inc_mod) { this.handleInput(inc_mod); } 
+   
       //call render of sprites?
       //
-   }
+   
    
 }
+
+
+
+
 
 // Start
 var canvas = document.getElementByID("canvas");
