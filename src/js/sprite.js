@@ -20,16 +20,18 @@ Sprite.Character = function Sprite_Character(inc_source,inc_size,inc_frames){
 }
 
 //Character functionality
-function Sprite.Character.prototype(inc_source,inc_size) {
+Sprite.Character.prototype = {
 	this.x = 0;
 	this.y = 0;
-	this.source = inc_source;
-	this.size = inc_size;
+	this.source = undefined;
+	this.footprint = undefined;
 	
 	
-	initialize: function (inc_x,inc_y) {
+	initialize: function (inc_x,inc_y,inc_source,inc_footprint) {
 		this.x = inc_x;
 		this.y = inc_y;
+		this.source = inc_source;
+		this.footprint = inc_footprint;
 	}
 	toString: function () {
 		
