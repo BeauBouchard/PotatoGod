@@ -8,10 +8,8 @@
  var Sprite = Sprite||{};
  
  //Constructor for Characters (moving sprites, NPC, or Player)
-Sprite.Character = function Sprite_Character(inc_source,inc_size,inc_frames){
-  	this.source = inc_source;
-	this.size = inc_size;
-	this.frames = inc_frames
+Sprite.Character = function Sprite_Character(){
+
 
 }
 //Constructor for Enviroment Objects (Plants, buildings, fences)
