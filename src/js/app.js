@@ -47,11 +47,10 @@ Game.prototype = {
       this.firstRun();
    }
    initializePlayer: function() {
-       var Player = Object.create(Sprite.Character.prototype("img/player.png",32));
-       Player.initialize(canvas.width / 2,canvas.height / 2);
+       var Player = Object.create(Sprite.Character.prototype);
+       Player.initialize(canvas.width / 2,canvas.height / 2,"img/player.png",32);
        this.sprites["img/player.png"] = Player;
-       
-       
+       Player.toString();
    }
    handleInput: function(inc_mod) {
     
