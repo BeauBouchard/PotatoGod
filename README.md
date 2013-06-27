@@ -1,7 +1,7 @@
-PotatoGod
+## Potato God II: From Dirt to Deity ##
 =========
 
-## Potato God II: From Dirt to Deity ##
+
 
 Created using Cavas, HTML5, javascript.
 
